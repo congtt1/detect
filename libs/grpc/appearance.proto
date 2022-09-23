@@ -1,0 +1,15 @@
+syntax="proto3";
+
+service Appearance {
+  rpc predict (AppearanceRequest) returns (AppearanceResponse) {}
+}
+
+message AppearanceRequest {
+  bytes image  = 1;
+}
+
+message AppearanceResponse {
+  bytes classes = 1;
+  bytes bboxes = 2;
+  bytes probs = 3;
+}
